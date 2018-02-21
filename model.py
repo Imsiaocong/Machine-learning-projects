@@ -26,7 +26,7 @@ def normalize_pixels(pixels):
 def create_one_hot_encoded_labels(labels):
         unique_labels_count = np.unique(labels).shape[0]
         one_hot_encoded_labels = to_categorical(labels, 10)
-
+        print(one_hot_encoded_labels.shape)
         return one_hot_encoded_labels
 
 def model():
@@ -52,7 +52,7 @@ if __name__ == '__main__':
 
         pixels_test, labels_test = L('fashionmnist/fashion-mnist_test.csv')
         pixels_test = normalize_pixels(pixels_test)
-
+'''
         print(pixels_train.shape)
         print(labels_train.shape)
 
@@ -66,3 +66,4 @@ if __name__ == '__main__':
         print('Test accuracy: {}'.format(score[1]))
         model.save('save_model.h5')
         plot_model(model, to_file='model.png')
+'''
